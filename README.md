@@ -23,6 +23,12 @@ Jev does **bounded judgments** on text — "which of these 4?", "is this true?" 
 **1. Install the package**
 
 ```bash
+pi install git:github.com/yosit/dot-pi
+```
+
+Or from a local clone, if you want to edit it:
+
+```bash
 git clone git@github.com:yosit/dot-pi.git ~/code/dot-pi
 cd ~/code/dot-pi && bun install          # dev deps only (typecheck/tests)
 pi install ~/code/dot-pi                  # adds it to ~/.pi/agent/settings.json
