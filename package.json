@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "description": "Pi coding-agent extensions: a Claude-Code-style statusline and TypeSafe Jev-powered guardrails for the coding loop.",
+  "license": "MIT",
+  "repository": "github:yosit/dot-pi",
   "type": "module",
   "keywords": ["pi-package"],
   "pi": {
