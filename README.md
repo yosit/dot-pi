@@ -6,7 +6,7 @@ My [pi](https://pi.dev) setup as a pi package: a Claude-Code-style statusline, a
 |---|---|---|
 | [`statusline`](#statusline) | footer | dir · branch · model · thinking · context vs compaction point · cache hit · lines changed · cost |
 | [`autothink`](#autothink) | `input` | Picks the thinking level for each prompt |
-| [`settle-gate`](#settle-gate) | `agent_before_settle` | Blocks unverified "done" claims; redirects plain-text questions to `AskUserQuestion` |
+| [`settle-gate`](#settle-gate) | `agent_before_settle` | Sends unverified "done" claims back to verify; redirects plain-text questions to `AskUserQuestion` |
 | [`loop-detector`](#loop-detector) | `turn_end` | Notices a failing retry loop, tells the agent to step back, raises thinking |
 
 ## Why Jev, and where not
@@ -38,7 +38,7 @@ To load only some extensions, use the object form in `~/.pi/agent/settings.json`
 
 **2. TypeSafe API key** (everything except `statusline` needs it)
 
-Create a key at <https://console.typesafe.ai/settings/keys>. The client looks for it in this order, once per pi process:
+Create a key at <https://console.typesafe.ai/settings/keys>. The client looks for it in this order (a found key is cached for the pi process; a miss is retried on the next call):
 
 1. `TYPESAFE_API_KEY` environment variable
 2. global [psst](https://github.com/Michaelliv/psst) vault: `psst --global set TYPESAFE_API_KEY`
