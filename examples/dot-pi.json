@@ -1,0 +1,16 @@
+{
+  "typesafe": {
+    "model": "jev-1.13.0",
+    "timeoutMs": 4000
+  },
+  "autothink": { "enabled": true, "confidenceFloor": 0.6 },
+  "settleGate": {
+    "verify": {
+      "enabled": true,
+      "threshold": 0.7,
+      "commands": ["\\bbun\\s+run\\s+(check|test)\\b", "\\bbun\\s+test\\b"]
+    },
+    "ask": { "enabled": true, "threshold": 0.75, "toolName": "AskUserQuestion" }
+  },
+  "loopDetector": { "enabled": true, "threshold": 0.7, "window": 6, "minErrors": 3, "escalateThinking": "high" }
+}

@@ -1,0 +1,7 @@
+{
+  "compaction": {
+    "modelOverrides": {
+      "anthropic/claude-opus-5-5": { "reserveTokens": 600000 }
+    }
+  }
+}
